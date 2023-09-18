@@ -34,7 +34,7 @@ function Header(props) {
   </button>
 
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav mr-auto ms-4 w-100">
+    <ul className="navbar-nav mr-auto ps-4 w-100">
       <li className="nav-item active">
         <a className="nav-link" href="#Home">Home</a>
       </li>
@@ -47,7 +47,7 @@ function Header(props) {
       <li className="nav-item">
         <a className="nav-link" href="#Resume">Resume</a>
       </li>
-      <div className={`form-check form-switch text-${props.modeProps==='dark'?'light':'dark'} ms-auto mt-2 me-2`}>
+      <div className={`form-check form-switch text-${props.modeProps==='dark'?'light':'dark'} ms-auto mt-2 me-4`}>
       <input onChange={props.toggleModeProps} className="form-check-input" style={{cursor:"pointer"}} type="checkbox" id="flexSwitchCheckDefault" checked={props.modeProps==='light'}/>
       <label className="form-check-label" style={{cursor:"pointer"}} htmlFor="flexSwitchCheckDefault">{props.modeProps==='dark'?'Enable':'Disable'} Light Mode</label>
       </div>

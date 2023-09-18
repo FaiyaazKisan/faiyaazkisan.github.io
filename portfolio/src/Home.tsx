@@ -56,7 +56,7 @@ function Home() {
         <h2 id="qualification">Qualification</h2>
         <p>I have done my Graduation in Bsc Information Technology from G.N. Khalse College, Mumbai.</p>
         <img src={Certificate} style={{width:"100%", maxWidth:"1000px"}} className="mb-3" alt='Graduation Certificate from Mumbai University'/>
-        <p>I have also taken a few courses from udemy to learn better.<br/><b>Certificate Verification:</b> https://www.udemy.com/certificate/UC-427f50a3-04b7-43cb-a194-ad6f82b9cf05/</p>
+        <p>I have also taken a few courses from udemy to learn better.<br/><b>Certificate Verification:</b> <a href="https://www.udemy.com/certificate/UC-427f50a3-04b7-43cb-a194-ad6f82b9cf05/">https://www.udemy.com/certificate/UC-427f50a3-04b7-43cb-a194-ad6f82b9cf05/</a></p>
         <img src={Udemy} style={{width:"100%", maxWidth:"1000px", border:"1px solid black"}} className="mb-3" alt=''/>
         <h2 id="Resume">My Resume</h2>
         <a href={CV_FaiyaazKisan} target="_blank">
