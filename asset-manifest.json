@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.a289e5ee.css",
-    "main.js": "/static/js/main.bf29345d.js",
+    "main.js": "/static/js/main.23b72406.js",
     "static/media/Certificate.jpg": "/static/media/Certificate.10b557c3cd1b223f021a.jpg",
-    "static/media/CV_FaiyaazKisan.pdf": "/static/media/CV_FaiyaazKisan.20635d0b77e9e7babf11.pdf",
+    "static/media/CV_FaiyaazKisan.pdf": "/static/media/CV_FaiyaazKisan.d1f2decba93303acb9ae.pdf",
     "static/media/Udemy.jpg": "/static/media/Udemy.1c8fb4f7b1c470788456.jpg",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.449ad8adf6ae0424b7ed.woff",
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.dea24bf5a7646d8b84e7.woff2",
     "static/media/LinkedInLogo.svg": "/static/media/LinkedInLogo.171001b536ab25e981a58e1ea76991dc.svg",
     "index.html": "/index.html",
     "main.a289e5ee.css.map": "/static/css/main.a289e5ee.css.map",
-    "main.bf29345d.js.map": "/static/js/main.bf29345d.js.map"
+    "main.23b72406.js.map": "/static/js/main.23b72406.js.map"
   },
   "entrypoints": [
     "static/css/main.a289e5ee.css",
-    "static/js/main.bf29345d.js"
+    "static/js/main.23b72406.js"
   ]
 }
