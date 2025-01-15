@@ -1,0 +1,119 @@
+//Snippets
+
+//Redux > PutSlice.js
+
+import {createSlice} from '@reduxjs/toolkit'
+
+const initialState={
+    name:"",
+    address:""
+}
+const PutSlice=createSlice({
+ name:"PutSlice",
+ initialState:initialState,
+ reducers:{
+   InputFields:(state, action)=>{
+    state.name=action.payload.name;
+    state.address=action.payload.address;
+    }
+}   
+})
+
+export const {InputFields}=PutSlice.actions;
+export const InputFieldsReducer=PutSlice.reducer;
+export default PutSlice;
+
+//Redux > store.js
+
+import {configureStore} from '@reduxjs/toolkit'
+import {InputFieldsReducer} from './PutSlice'
+
+export const store=configureStore({
+reducer:{
+    InputFieldsStore:InputFieldsReducer
+}
+})
+
+//<Provider store={store}> in index.js
+
+Redux toolkit
+
+//API > nameofapi.ts
+
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import React from 'react'
+
+const MyCasesApi=createApi({
+    reducerPath:"MyCasesApi",
+    baseQuery:fetchBaseQuery({
+        baseUrl:"https://192.168.0.101:7010/api/",
+        prepareHeaders:(headers)=>{
+            const token=localStorage.getItem("token");
+            token && headers.append("Authorization", "Bearer "+token);
+        }
+    }),
+    tagTypes:["MyCasesTag"],
+    endpoints:(builder)=>({
+        getMyCases: builder.query({
+            query:()=>({
+                url:"MyCases"
+            }),
+            providesTags:["MyCasesTag"]
+        }),
+        getMyCasesById:builder.query({
+            query:(id)=>({
+                url:"MyCases/"+id
+            }),
+            providesTags:["MyCasesTag"]
+        }),
+        createMyCases:builder.mutation({
+            query:(MyCasesData)=>({
+                url:"MyCases",
+                method:"POST",
+                body:MyCasesData
+            }),
+            invalidatesTags:["MyCasesTag"]
+        }),
+        editMyCases:builder.mutation({
+            query:({id, MyCasesData})=>({
+                url:"MyCases/"+id,
+                method:"PUT",
+                body:MyCasesData
+            }),
+            invalidatesTags:["MyCasesTag"]
+        }),
+        deleteMyCase:builder.mutation({
+            query:(id)=>({
+                url:"MyCases/"+id,
+                method:"DELETE"
+            }),
+            invalidatesTags:["MyCasesTag"]
+        })
+    })
+})
+
+export const {useGetMyCasesQuery, useCreateMyCasesMutation, useEditMyCasesMutation, useGetMyCasesByIdQuery, useDeleteMyCaseMutation}=MyCasesApi;
+export default MyCasesApi;
+
+Usage
+const[CreateMyCases]=useCreateMyCasesMutation();
+CreateMyCases({
+	//Whatever the api is accepting
+        id:Math.random()*10,
+        city:newCity,
+        country:newCountry,
+        daysNeeded:Math.round(Math.random()*10)+1
+    });
+
+//Commonly used imports
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import React, {useState, useEffect} from 'react'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
+import { Provider } from 'react-redux';
+import {configureStore} from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+let logo = require("../../Assets/Images/mango.png")
